@@ -84,7 +84,7 @@
         excluding="**/*.java" attribute must be for the src/main/resources
         and including="**/*.java" attribute must be for the src/main/java and similarly for test</li>
       <li>But the important problem is the entry - <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-          must be added under <classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER"></li>
+          must be added under <classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER"> else you will get - java.lang.ClassNotFoundException: org.springframework.web.servlet.DispatcherServlet</li>
       <li>restart eclipse after the classpath changes</li>
       <li>Database: Currently uses DB2, check the viralpatel.net links for DDL to create the DB table. Can be used with Derby or something.</li>
       <li>To execute: Add new server environment - Tomcat, Add new server</li>
