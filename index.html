@@ -36,7 +36,7 @@
     <ol>
       <li>import the project into eclipse</li>
       <li>set the target platform</li>
-      <li><a href="https://github.com/hri123/IR-WS/wiki/DB-setup---initialization-for-viral-patel-example">derby database table is required to run the viral patel example</a> (script in the - 'repository' folder)</li>
+      <li><a href="https://github.com/hri123/IR-WS/wiki/DB-setup---initialization-for-viral-patel-example">derby database table is required to run the viral patel example</a> (script in the - 'repository' folder); refer to <a href="https://github.com/hri123/IR-WS/commit/d87dfa985b10d45d58acba74017aecef8fe9aabd">this</a> to create the derby database, table and value for the id column automatically.</li>
       <li>change the start level of this viral patel plugin to 5 and the start level of osgi.services to 1</li>
       <li>dojo toolkit must be available to run offline</li>
     </ol>
@@ -73,6 +73,10 @@
     </ol>
     <h3 id="tutorials-details">Details</h3>
     <h4><a href="http://viralpatel.net/blogs/spring3-mvc-hibernate-maven-tutorial-eclipse-example/">Spring3HibernateMaven</a></h4>
+    <h5>Summary</h5>
+    <ul>
+      <li>learning spring and hibernate that may be difficult to be deployed over OSGi can be done here</li>
+    </ul>
     <h5>Setup</h5>
     <ol>
       <li>Eclipse -> Install new software -> <a href="http://eclipse.org/m2e/">m2e</a>
@@ -87,6 +91,7 @@
           must be added under <classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER"> else you will get - java.lang.ClassNotFoundException: org.springframework.web.servlet.DispatcherServlet</li>
       <li>restart eclipse after the classpath changes</li>
       <li>Database: Currently uses DB2, check the viralpatel.net links for DDL to create the DB table. Can be used with Derby or something.</li>
+      <li>Copy db2jcc.jar, db2jcc_license_cisuz.jar, db2jcc_license_cu.jar into .../apache-tomcat-6.0.20/lib; in case of derby copy derby.jar into the apache-tomcat lib directory;</li>
       <li>To execute: Add new server environment - Tomcat, Add new server</li>
     </ol>
     <h4>Career Cup - Cracking The Coding Interview - Java Solutions</h4>
