@@ -26,5 +26,23 @@
     </ol>
     <h3 id="mean-io-details">Details</h3>
     <h4>NonCode</h4>
+    <h4>Deploying sample on bluemix</h4>
+    <ol>
+      <li>Following the steps <a href="http://www.ibm.com/developerworks/library/wa-nodejs-polling-app/">here</a> to run it locally</li>
+      <li>To run it on bluemix
+        <ol>
+          <li>install nodeclipse and enide from <a href="http://www.nodeclipse.org/">here</a></li>
+          <li>Create an app with  'SDK for Node.js' runtime on bluemix</li>
+          <li>Follow the instructions mentioned in 'QUICK START' link on the application overview page.</li>
+          <ol>
+            <li>.cfignore - add files that you do not want to push to cloudfoundry</li>
+            <li>cf  api https://api.ng.bluemix.net</li>
+            <li>cf login -u hrishikesh.kumar@in.ibm.com</li>
+            <li>cf target -o hrishikesh.kumar@in.ibm.com -s dev</li>
+            <li>cf push hMeanTrial1</li>
+          </ol>
+        </ol>
+      </li>
+    </ol>
 </body>
 </html>
