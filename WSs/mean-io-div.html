@@ -7,6 +7,8 @@
     <h3 id="mean-io-summary">Summary</h3>
     <ul>
       <li>Pinterest style mean.io application that can be used as a knowledge base</li>
+      <li>hMeanBluemix - Project created following a simple Mean Tutorial at http://www.ibm.com/developerworks/library/wa-nodejs-polling-app/</li>
+      <li>hMeanBluemix - Also has jQuery tutorial in app-jquery.js</li>
     </ul>
     <h3 id="mean-io-setup">Setup</h3>
     <ol>
@@ -41,7 +43,8 @@
             <li>cf  api https://api.ng.bluemix.net</li>
             <li>cf login -u hrishikesh.kumar@in.ibm.com</li>
             <li>cf target -o hrishikesh.kumar@in.ibm.com -s dev</li>
-            <li>cf push hMeanTrial1</li>
+            <li>cf push hMeanTrial1 -c "node app.js"</li>
+            <li>cf logs hMeanTrial1 --recent</li>
           </ol>
         </ol>
       </li>
