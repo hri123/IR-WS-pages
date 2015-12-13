@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+    <h2 id="mean-io">Mean IO Stack</h2>
+    <h3 id="mean-io-summary">Summary</h3>
+    <ul>
+      <li>Pinterest style mean.io application that can be used as a knowledge base</li>
+      <li>hMeanBluemix - Project created following a simple Mean Tutorial at http://www.ibm.com/developerworks/library/wa-nodejs-polling-app/</li>
+      <li>hMeanBluemix - Also has jQuery tutorial in app-jquery.js</li>
+    </ul>
+    <h3 id="mean-io-setup">Setup</h3>
+    <ol>
+      <li>Followed steps in <a href="http://mean.io/#!/docs">Docs</a></li>
+      <li>Install npm and node.js -> Go <a href="http://nodejs.org/">here</a> -> click install -> node-v0.10.28-x64.msi -> npm and node gets installed under C:\Program Files\nodejs and the path gets added to environment variables - Path</li>
+      <li>Install bower: -> npm i -g bower -> (gets copied under C:\Users\IBM_ADMIN\AppData\Roaming\npm)</li>
+      <li>Install MongoDB: -> <a href="http://www.mongodb.org/">mongodb</a> -> installed under C:\Program Files\MongoDB 2.6 Standard</li>
+      <li>Download and install git from <a href="http://git-scm.com/download/win">here</a>. -> installed under C:\Program Files (x86)\Git -> add C:\Program Files (x86)\Git\bin; to Path environment variable</li>
+      <li>npm install -g meanio@latest</li>
+      <li>mean init myPinterest</li>
+      <li>cd myPinterest</li>
+      <li>npm install</li>
+      <li>create c:\data\db folder, this is where the default mongodb database will be created</li>
+      <li>start mongodb with command -> mongod</li>
+      <li>install grunt globally -> npm install -g grunt-cli (<a href="http://mean.io/#!/support#faq">http://mean.io/#!/support#faq</a>)</li>
+      <li>delete .git folder inside the folder myPinterest, else it interferes with the git operations of the overall 
+      structure.</li>
+      <li>To start server -> node server; and goto http://localhost:3000/</li>
+    </ol>
+    <h3 id="mean-io-details">Details</h3>
+    <h4>NonCode</h4>
+    <h4>Deploying sample on bluemix</h4>
+    <ol>
+      <li>Following the steps <a href="http://www.ibm.com/developerworks/library/wa-nodejs-polling-app/">here</a> to run it locally</li>
+      <li>To run it on bluemix
+        <ol>
+          <li>install nodeclipse and enide from <a href="http://www.nodeclipse.org/">here</a></li>
+          <li>Create an app with  'SDK for Node.js' runtime on bluemix</li>
+          <li>Follow the instructions mentioned in 'QUICK START' link on the application overview page.</li>
+          <ol>
+            <li>.cfignore - add files that you do not want to push to cloudfoundry</li>
+            <li>cf  api https://api.ng.bluemix.net</li>
+            <li>cf login -u hrishikesh.kumar@in.ibm.com</li>
+            <li>cf target -o hrishikesh.kumar@in.ibm.com -s dev</li>
+            <li>cf push hMeanTrial1 -c "node app.js"</li>
+            <li>cf logs hMeanTrial1 --recent</li>
+          </ol>
+        </ol>
+      </li>
+    </ol>
+</body>
+</html>
