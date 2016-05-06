@@ -45,11 +45,13 @@
       }
 
       // search-phrase not entered
+      // if there is no search phrase dont load the contents of the file
       if (searchPhrase == undefined || searchPhrase.trim() == '') {
         showSource(panelId, filename, description, highlight);
         return;
       }
 
+      // unless required, dont load the contents of the file
       // get the contents of the file
       $.ajax({
             url : filename,
@@ -72,7 +74,7 @@
 
     }
 
-    $(document).ready(function() {
+    var loadAndDisplay = function() {
 
       // these json files are like the index files of the database
       // the database consists of all the files mentioned in the json file
@@ -121,7 +123,7 @@
 
             var highlight = source.highlight;
 
-            checkForSearchPhrase('', panelId, filename, description, highlight);
+            checkForSearchPhrase($("#id_search_phrase_input").val(), panelId, filename, description, highlight);
 
           });
 
@@ -132,13 +134,46 @@
       });
 
 
+    };
+
+    $(document).ready(loadAndDisplay);
+  </script>
+
+  <script>
+
+  $(document).ready(function() {
+
+   $("#id_search_phrase_button").bind("click", function() {
+
+     // remove all dom elements
+     $('#add-panel-here').empty();
+
+     loadAndDisplay();
+   });
+
+    $("#id_search_phrase_input").keyup(function(event) {
+      if(event.keyCode == 13) {
+          $("#id_search_phrase_button").click();
+      }
     });
+  });
+
+
   </script>
 </head>
 
 <body>
 
   <nav class="navbar navbar-default">
+
+    <div class="container">
+      <div class="input-group">
+        <input type="text" id="id_search_phrase_input" class="form-control">
+        <span class="input-group-btn">
+          <button class="btn btn-default" id="id_search_phrase_button" type="button">Search</button>
+        </span>
+      </div>
+    </div>
 
   </nav>
 
