@@ -11,7 +11,8 @@
 
   <script>
     function addPanel(panelId, panelName) {
-      $('#add-panel-here').append("<div class='col-md-4' id=" + panelId + "><div class='container panel panel-default col-md-12'><div class='panel-heading row'><h4 class='panel-title col-md-12'>" + panelName +
+      // by default dont display the panel; display only if there is a source entry too based on the search-phrase
+      $('#add-panel-here').append("<div class='col-md-4' id=" + panelId + " style='display:none;'><div class='container panel panel-default col-md-12'><div class='panel-heading row'><h4 class='panel-title col-md-12'>" + panelName +
         "</h4></div><ul class='list-group'></ul></div></div>");
     }
 
@@ -23,7 +24,52 @@
         html += "<div class='col-sm-1'><a href='showcode.html?filename=" + filename + "&highlight=" + highlight + "'>" + '(' + highlight + ')' + "</a><a href='showcode.html?filename=" + filename + "&highlight=" + 'html' + "'>" + '(html)' + "</a></div></li>";
       }
 
-      $('#' + panelId).find('ul').append(html);
+      $('#' + panelId + '> div > ul').append(html);
+    }
+
+    function checkForSearchPhrase(searchPhrase, panelId, filename, description, highlight) {
+
+      // if the search-phrase is present call this function
+      var showSource = function(panelId, filename, description, highlight) {
+
+        if ($('#' + panelId).is(":visible")) {
+          // if panel already visible, that means search-phrase is present in one of its sources
+          // dont do anything
+        } else {
+          // display the panel
+          $('#' + panelId).show();
+        }
+
+        // addSource
+        addSource(panelId, filename, description, highlight);
+      }
+
+      // search-phrase not entered
+      if (searchPhrase == undefined || searchPhrase.trim() == '') {
+        showSource(panelId, filename, description, highlight);
+        return;
+      }
+
+      // get the contents of the file
+      $.ajax({
+            url : filename,
+            dataType: "html",
+            success : function (data) {
+
+              if (data == undefined || data.trim() == '') {
+                return;
+              }
+
+              var searchPhrasePresent = (data.search(new RegExp(searchPhrase, "i")) != -1);
+
+              if (searchPhrasePresent) {
+                showSource(panelId, filename, description, highlight);
+              }
+
+              return;
+            }
+        });
+
     }
 
     $(document).ready(function() {
@@ -75,7 +121,8 @@
 
             var highlight = source.highlight;
 
-            addSource(panelId, filename, description, highlight);
+            checkForSearchPhrase('', panelId, filename, description, highlight);
+
           });
 
         });
