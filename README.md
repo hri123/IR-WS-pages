@@ -1,13 +1,13 @@
 # IR-WS-pages
 gh-pages for repository IR-WS - check the gh-pages branch (master branch is deleted and gh-pages made the default branch)
 
-Landing page: http://hri123.github.io/IR-WS-pages/
+Landing page: 'http://hri123.github.io/IR-WS-pages/'
 
 # How to execute locally
 
-One time: npm install -g http-server
+One time: 'npm install -g http-server'
 
-execute http-server from the directory which you want to host (http:127.0.0.1:8080)
+execute 'http-server' from the directory which you want to host (http:127.0.0.1:8080)
 
 if you dont use http-server and directly try to load with the file:/// method, it fails CORS error as below:
 
