@@ -1,0 +1,7 @@
+osascript -e 'tell application "Terminal" to activate'
+osascript -e 'tell app "Terminal" to do script "ssh -i /Users/hrishikesh/.ssh/aws_jumpbox_private_key adminuser@169.55.58.233"' 
+osascript -e 'tell app "Terminal" to set bounds of window 1 to {0, 0, 835, 480}'
+osascript -e 'tell app "Terminal" to do script "ssh -i /Users/hrishikesh/.ssh/aws_jumpbox_private_key adminuser@169.55.58.233"' 
+osascript -e 'tell app "Terminal" to set bounds of window 1 to {840, 0, 1680, 480}'
+osascript -e 'tell app "Terminal" to do script "ssh -i /Users/hrishikesh/.ssh/aws_jumpbox_private_key adminuser@169.55.58.233"' 
+osascript -e 'tell app "Terminal" to set bounds of window 1 to {0, 510, 835, 990}'
