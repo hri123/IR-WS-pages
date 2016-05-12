@@ -1,0 +1,6 @@
+osascript -e 'tell application "Terminal" to activate'
+osascript -e 'tell app "Terminal" to do script "cd /Users/hrishikesh/C/GitHub/IR-WS/MEAN/Angular/ngTutorial/FullApp && gulp serve-dev --nosync"'
+osascript -e 'tell app "Terminal" to set bounds of window 1 to {0, 0, 835, 480}'
+osascript -e 'tell application "Google Chrome" to activate'
+osascript -e 'tell app "Google Chrome" to set myTab to make new tab at end of tabs of window 1'
+osascript -e 'tell application "Google Chrome" to set URL of active tab of window 1 to "http://localhost:3000"'
