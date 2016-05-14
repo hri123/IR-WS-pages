@@ -31,5 +31,16 @@
             "description": ["Learning Path"],
             "highlight": "js"
         }]
+    }, {
+        "panelName": "JavaScript - Mobile Frameworks",
+        "sources": [{
+            "filename": "source/JavaScript/NativeScript.js",
+            "description": ["NativeScript"],
+            "highlight": "js"
+        }, {
+            "filename": "source/JavaScript/ReactNative.js",
+            "description": ["React Native"],
+            "highlight": "js"
+        }]
     }]
 }
