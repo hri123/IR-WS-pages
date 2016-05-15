@@ -13,7 +13,8 @@
   <script>
     function addPanel(panelId, panelName) {
       // by default dont display the panel; display only if there is a source entry too based on the search-phrase
-      $('#add-panel-here').append("<div class='grid-item'><div class='col-md-4' id=" + panelId + " style='display:none;'><div class='container panel panel-default col-md-12'><div class='panel-heading row'><h4 class='panel-title col-md-12'>" + panelName +
+      $('#add-panel-here').append("<div class='grid-item'><div class='col-md-4' id=" + panelId + " style='display:none;'><div class='container panel panel-default col-md-12'><div class='panel-heading row'><h4 class='panel-title col-md-12'>" +
+        panelName +
         "</h4></div><ul class='list-group'></ul></div></div></div>");
     }
 
@@ -22,7 +23,8 @@
       var html = "<li class='row list-group-item'><div class='col-sm-11'>" + description + "</div>";
 
       if (filename && filename != "") {
-        html += "<div class='col-sm-1'><a href='showcode.html?filename=" + filename + "&highlight=" + highlight + "'>" + '(' + highlight + ')' + "</a><a href='showcode.html?filename=" + filename + "&highlight=" + 'html' + "'>" + '(html)' + "</a></div></li>";
+        html += "<div class='col-sm-1'><a href='showcode.html?filename=" + filename + "&highlight=" + highlight + "'>" + '(' + highlight + ')' + "</a><a href='showcode.html?filename=" + filename + "&highlight=" + 'html' + "'>" + '(html)' +
+          "</a></div></li>";
       }
 
       $('#' + panelId + '> div > ul').append(html);
@@ -55,25 +57,33 @@
       // unless required, dont load the contents of the file
       // get the contents of the file
       $.ajax({
-            url : filename,
-            dataType: "html",
-            success : function (data) {
+        url: filename,
+        dataType: "html",
+        success: function(data) {
 
-              if (data == undefined || data.trim() == '') {
-                return;
-              }
+          if (data == undefined || data.trim() == '') {
+            return;
+          }
 
-              var searchPhrasePresent = (data.search(new RegExp(searchPhrase, "i")) != -1);
+          var searchPhrasePresent = (data.search(new RegExp(searchPhrase, "i")) != -1);
 
-              if (searchPhrasePresent) {
-                showSource(panelId, filename, description, highlight);
-              }
+          if (searchPhrasePresent) {
+            showSource(panelId, filename, description, highlight);
+          }
 
-              return;
-            }
-        });
+          return;
+        }
+      });
 
     }
+
+    var loadAndDisplaySelected = function() {
+
+      $('#list-panel-groups input:checked').each(function() {
+        loadAndDisplay($(this).val());
+      });
+
+    };
 
     var loadAndDisplay = function(dataFile) {
 
@@ -133,46 +143,45 @@
 
     };
 
+    var searchCriteriaChanged = function() {
+
+      // remove all dom elements
+      $('#add-panel-here').empty();
+
+      loadAndDisplaySelected();
+
+    };
+
     // these json files are like the index files of the database
     // the database consists of all the files mentioned in the json file
     var dataFiles = ["source/panelDetails/DataStructures.json", "source/panelDetails/JavaScript.json"];
 
     // unique sequential number
     $.uniqueNumberForPanel = 1;
-
-    $(document).ready($.each(dataFiles, function(i, dataFile) {
-      loadAndDisplay(dataFile);
-    }));
   </script>
 
   <script>
+    $(document).ready(function() {
 
-  $(document).ready(function() {
-
-   $("#id_search_phrase_button").bind("click", function() {
-
-     // remove all dom elements
-     $('#add-panel-here').empty();
-
-     $.each(dataFiles, function(i, dataFile) {
-       loadAndDisplay(dataFile);
-     });
-   });
-
-    $("#id_search_phrase_input").keyup(function(event) {
-      if(event.keyCode == 13) {
-          $("#id_search_phrase_button").click();
+      for (i = 0; i < dataFiles.length; i++) {
+        var dataFile = dataFiles[i];
+        $('#list-panel-groups').append("<label class='checkbox-inline'><input type='checkbox' value='" + dataFile + "' checked>" + dataFile.replace(/^.*[\\\/]/, '').replace(/\.json$/, '') + "</label>");
       }
+      $('#list-panel-groups input[type="checkbox"]').each(function() {
+        $(this).bind("click", searchCriteriaChanged);
+      });
+
+      $("#id_search_phrase_button").bind("click", searchCriteriaChanged);
+
+      $("#id_search_phrase_input").keyup(function(event) {
+        if (event.keyCode == 13) {
+          $("#id_search_phrase_button").click();
+        }
+      });
+
+      loadAndDisplaySelected();
+
     });
-
-    $.each(dataFiles, function(i, dataFile) {
-      $('#list-panel-groups').append("<label class='checkbox-inline'><input type='checkbox' value=''>"
-        + dataFile.replace(/^.*[\\\/]/, '').replace(/\.json$/, '')
-        + "</label>");
-    });
-  });
-
-
   </script>
 </head>
 
@@ -193,8 +202,6 @@
       <div id="list-panel-groups" class="input-group">
       </div>
     </div>
-
-
 
 
   </nav>
