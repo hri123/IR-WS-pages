@@ -1,0 +1,10 @@
+{
+    "panels": [{
+        "panelName": "DataStructures - Introduction",
+        "sources": [{
+            "filename": "source/DataStructures/generalInfo.js",
+            "description": "General Information",
+            "highlight": "js"
+        }]
+    }]
+}

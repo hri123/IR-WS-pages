@@ -75,11 +75,7 @@
 
     }
 
-    var loadAndDisplay = function() {
-
-      // these json files are like the index files of the database
-      // the database consists of all the files mentioned in the json file
-      var dataFile = "source/panelDetails.json";
+    var loadAndDisplay = function(dataFile) {
 
       // 'async': false, -> Synchronous XMLHttpRequest on the main thread is deprecated because of its detrimental effects to the end user's experience. For more help, check https://xhr.spec.whatwg.org/.
       // var json = (function() {
@@ -106,7 +102,7 @@
         var json = data;
         $.each(json.panels, function(i, panel) {
 
-          var panelId = 'panel' + i;
+          var panelId = 'panel' + $.uniqueNumberForPanel++;
 
           var panelName = panel.panelName;
 
@@ -137,7 +133,16 @@
 
     };
 
-    $(document).ready(loadAndDisplay);
+    // these json files are like the index files of the database
+    // the database consists of all the files mentioned in the json file
+    var dataFiles = ["source/panelDetails/DataStructures.json", "source/panelDetails/JavaScript.json"];
+
+    // unique sequential number
+    $.uniqueNumberForPanel = 1;
+
+    $(document).ready($.each(dataFiles, function(i, dataFile) {
+      loadAndDisplay(dataFile);
+    }));
   </script>
 
   <script>
@@ -149,13 +154,21 @@
      // remove all dom elements
      $('#add-panel-here').empty();
 
-     loadAndDisplay();
+     $.each(dataFiles, function(i, dataFile) {
+       loadAndDisplay(dataFile);
+     });
    });
 
     $("#id_search_phrase_input").keyup(function(event) {
       if(event.keyCode == 13) {
           $("#id_search_phrase_button").click();
       }
+    });
+
+    $.each(dataFiles, function(i, dataFile) {
+      $('#list-panel-groups').append("<label class='checkbox-inline'><input type='checkbox' value=''>"
+        + dataFile.replace(/^.*[\\\/]/, '').replace(/\.json$/, '')
+        + "</label>");
     });
   });
 
@@ -175,6 +188,14 @@
         </span>
       </div>
     </div>
+
+    <div class="container">
+      <div id="list-panel-groups" class="input-group">
+      </div>
+    </div>
+
+
+
 
   </nav>
 
