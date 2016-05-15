@@ -6,7 +6,8 @@
 <ul>
 <li>Algorithms and Data Structures (Since you dont have a domain expertise like Commerce / Databases, you need this)</li>
 <ul>
-<li>http://www.flipkart.com/data-structures-algorithms-made-easy-java-structure-algorithmic-puzzles-english/p/itmegtbgck65qkhv</li>
+<li><a href="http://www.flipkart.com/data-structures-algorithms-made-easy-java-structure-algorithmic-puzzles-english/p/itmegtbgck65qkhv" target="_blank">Read this first</a></li>
+<li><a href="http://www.amazon.com/Elements-Programming-Interviews-Java-Insiders/dp/1517435803/" target="_blank">This is also a very good book</a></li>
 <li>HackerRank</li>
 <li><br /></li>
 </ul>

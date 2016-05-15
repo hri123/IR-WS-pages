@@ -1,0 +1,10 @@
+{
+    "panels": [{
+        "panelName": "Interview",
+        "sources": [{
+            "filename": "source/Interview/learningPath.js",
+            "description": ["Learning Path"],
+            "highlight": "js"
+        }]
+    }]
+}

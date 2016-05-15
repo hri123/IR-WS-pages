@@ -25,13 +25,6 @@
         "panelName": "JavaScript - Angular",
         "sources": []
     }, {
-        "panelName": "Interview",
-        "sources": [{
-            "filename": "source/Interview/learningPath.js",
-            "description": ["Learning Path"],
-            "highlight": "js"
-        }]
-    }, {
         "panelName": "JavaScript - Mobile Frameworks",
         "sources": [{
             "filename": "source/JavaScript/NativeScript.js",
