@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="downloaded/bootstrap-3.3.6-dist/css/bootstrap.css"></link>
   <script src="downloaded/jquery-1.12.3.js"></script>
   <script src="downloaded/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
+  <script src="downloaded/masonry.pkgd.js"></script>
   <style>
 
   </style>
@@ -12,8 +13,8 @@
   <script>
     function addPanel(panelId, panelName) {
       // by default dont display the panel; display only if there is a source entry too based on the search-phrase
-      $('#add-panel-here').append("<div class='col-md-4' id=" + panelId + " style='display:none;'><div class='container panel panel-default col-md-12'><div class='panel-heading row'><h4 class='panel-title col-md-12'>" + panelName +
-        "</h4></div><ul class='list-group'></ul></div></div>");
+      $('#add-panel-here').append("<div class='grid-item'><div class='col-md-4' id=" + panelId + " style='display:none;'><div class='container panel panel-default col-md-12'><div class='panel-heading row'><h4 class='panel-title col-md-12'>" + panelName +
+        "</h4></div><ul class='list-group'></ul></div></div></div>");
     }
 
     function addSource(panelId, filename, description, highlight) {
@@ -177,7 +178,7 @@
 
   </nav>
 
-  <div id="add-panel-here" class="container-fluid">
+  <div id="add-panel-here" class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }'>
   </div>
 
 </body>
