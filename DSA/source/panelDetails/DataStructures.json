@@ -5,6 +5,10 @@
             "filename": "source/DataStructures/generalInfo.js",
             "description": "General Information",
             "highlight": "js"
+        }, {
+            "filename": "source/DataStructures/big-o-notation.js",
+            "description": "Big O notation",
+            "highlight": "js"
         }]
     }]
 }
