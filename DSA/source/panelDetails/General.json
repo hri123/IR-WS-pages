@@ -1,0 +1,19 @@
+{
+    "panels": [{
+        "panelName": "Interview",
+        "sources": [{
+            "filename": "source/Interview/learningPath.js",
+            "description": ["Learning Path"],
+            "highlight": "js"
+        }]
+    }, {
+        "panelName": "TODOs",
+        "sources": [{
+            "filename": "",
+            "description": ["<ul>",
+              "<li>http://yeoman.io/authoring/index.html</li>",
+              "</ul>"],
+            "highlight": "js"
+        }]
+    }]
+}
