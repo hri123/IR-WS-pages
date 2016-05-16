@@ -2,7 +2,7 @@
     "panels": [{
         "panelName": "DataStructures - Introduction",
         "sources": [{
-            "filename": "source/DataStructures/generalInfo.js",
+            "filename": "../../IR-WS-pages/DSA/source/DataStructures/generalInfo.js",
             "description": "General Information",
             "highlight": "js"
         }, {
