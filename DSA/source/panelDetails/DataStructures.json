@@ -2,7 +2,8 @@
     "panels": [{
         "panelName": "DataStructures - Introduction",
         "sources": [{
-            "filename": "../../IR-WS-pages/DSA/source/DataStructures/generalInfo.js",
+            "filename": "source/DataStructures/generalInfo.js",
+            "_comment_filename": "http://raw.githubusercontent.com/hri123/IR-WS-pages/gh-pages/DSA/source/DataStructures/generalInfo.js",
             "description": "General Information",
             "highlight": "js"
         }, {
