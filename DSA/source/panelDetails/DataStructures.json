@@ -10,6 +10,10 @@
             "filename": "source/DataStructures/big-o-notation.js",
             "description": "Big O notation",
             "highlight": "js"
+        }, {
+            "filename": "source/DataStructures/recursion.js",
+            "description": "Recursion and backtracking",
+            "highlight": "js"
         }]
     }]
 }
