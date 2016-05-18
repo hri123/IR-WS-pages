@@ -15,5 +15,14 @@
               "</ul>"],
             "highlight": "js"
         }]
+    }, {
+        "panelName": "Editors",
+        "sources": [{
+            "filename": "",
+            "description": ["<ul>",
+              "<li>Microsoft's Visual Studio Code</li>",
+              "</ul>"],
+            "highlight": "js"
+        }]
     }]
 }

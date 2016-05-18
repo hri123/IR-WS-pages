@@ -34,14 +34,6 @@
             "filename": "source/JavaScript/ReactNative.js",
             "description": ["React Native"],
             "highlight": "js"
-        }, {
-            "filename": "",
-            "description": ["How to run an app on iphone running ios without developer account:",
-                "<ul>",
-                "<li><a href='https://www.youtube.com/watch?v=NxvJOf71e0w'>youtube video</a></li>",
-                "<li><a href='http://www.idownloadblog.com/2015/09/18/how-to-compile-apps-using-xcode-7-to-run-on-a-non-jailbroken-device/'>blog</a></li>",
-                "</ul>"],
-            "highlight": "js"
         }]
     }]
 }
