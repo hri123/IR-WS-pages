@@ -22,6 +22,7 @@ Now open in xcode and follow steps in the below links.
 <ul>
 <li><a href='https://www.youtube.com/watch?v=NxvJOf71e0w'>youtube video</a></li>
 <li><a href='http://www.idownloadblog.com/2015/09/18/how-to-compile-apps-using-xcode-7-to-run-on-a-non-jailbroken-device/'>blog</a></li>
+<li><a href='https://github.com/NativeScript/nativescript-cli#os-x'>nativescript cli</a></li>
 </ul>
 
 
