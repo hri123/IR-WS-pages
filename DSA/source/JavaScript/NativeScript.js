@@ -16,7 +16,7 @@ tns prepare ios (without this step the bundle identifier is not generated, this 
 Now open in xcode and follow steps in the below links.
 (fix issues in the identity portal in the Xcode editor, also make sure the name in the Bundle Identifier is correct)
 (on phone -> settings -> general -> device management -> trust)
-(if required - sudo gem install cocoapods)
+(if required - sudo gem install cocoapods, xcode-select --install)
 
 <h4>How to run an app on iphone running ios without developer account:</h4>
 <ul>
