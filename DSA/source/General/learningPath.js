@@ -14,6 +14,7 @@
 <li>Language Concepts (pick one, preferably JS, tough to know both)</li>
 <ul>
 <li>JavaScript</li>
+<ul><li><a href="http://localhost:1337" target="_blank">Read these first</a></li></ul>
 <li>Java</li>
 </ul>
 <li>General Computer Architecture Concepts</li>
