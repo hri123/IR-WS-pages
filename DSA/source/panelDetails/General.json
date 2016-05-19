@@ -2,7 +2,7 @@
     "panels": [{
         "panelName": "Interview",
         "sources": [{
-            "filename": "source/Interview/learningPath.js",
+            "filename": "source/General/learningPath.js",
             "description": ["Learning Path"],
             "highlight": "js"
         }]
