@@ -1,0 +1,10 @@
+{
+    "panels": [{
+        "panelName": "Java",
+        "sources": [{
+            "filename": "source/Java/design_patterns.js",
+            "description": ["Java Design Patterns"],
+            "highlight": "js"
+        }]
+    }]
+}

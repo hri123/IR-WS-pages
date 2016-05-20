@@ -1,4 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
+// Images copied from http://dmitrysoshnikov.com/ecmascript/javascript-the-core //
 
 (function understandingPrototype_1() {
 
