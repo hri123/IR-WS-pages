@@ -1,0 +1,19 @@
+{
+    "panels": [{
+        "panelName": "DevOps",
+        "sources": [{
+            "filename": "",
+            "description": ["CI - Travis / Jenkins - concepts"],
+            "highlight": "js"
+        }]
+    }, {
+        "panelName": "Version Control",
+        "sources": [{
+            "filename": "source/Concepts/github.js",
+            "description": ["Source Control - GIT / RTC - concepts"],
+            "highlight": "js"
+        }]
+    }]
+}
+
+

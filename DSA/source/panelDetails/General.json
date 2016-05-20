@@ -29,7 +29,7 @@
         "sources": [{
             "filename": "",
             "description": ["<ul>",
-              "<li><a href='http://www.blogger.com/'>link to blogger home</a></li>",
+              "<li><a href='http://www.blogger.com/' target='_blank'>link to blogger home</a></li>",
               "</ul>"],
             "highlight": "js"
         }]
