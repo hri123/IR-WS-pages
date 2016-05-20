@@ -21,6 +21,17 @@
                 "ES Harmony Module Proposals</li></ul>"
             ],
             "highlight": "js"
+        }, {
+            "filename": "source/JavaScript/Language/prototype.js",
+            "description": ["<a href='http://dmitrysoshnikov.com/ecmascript/javascript-the-core/' target='_blank'>ECMA-262-3 / ES3</a>&nbsp;<a href='http://dmitrysoshnikov.com/tag/ecma-262-3/' target='_blank'>(ECMA-262-3 in detail)</a><ul>",
+                "<li>Core</li>",
+                "<li>Prototype</li>",
+                "<li>Constructor</li>",
+                "<li></li>",
+                "<li></li>",
+                "</ul>"
+            ],
+            "highlight": "js"
         }]
     }, {
         "panelName": "JavaScript - Angular",

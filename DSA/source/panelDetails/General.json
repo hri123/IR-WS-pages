@@ -11,7 +11,7 @@
         "sources": [{
             "filename": "",
             "description": ["<ul>",
-              "<li></li>",
+              "<li>In the search input - can you take a natural language question as input - like - help me learn the basics of javascript - using watson apis ?</li>",
               "</ul>"],
             "highlight": "js"
         }]
@@ -31,6 +31,8 @@
               "<li>npm install</li>",
               "<li>create .gitignore file and add 'node_modules/' to it</li>",
               "<li>node index.js</li>",
+              "<li>node-debug -p 7000 index.js</li>",
+              "<li><a href='https://code.visualstudio.com/Docs/editor/debugging' target='_blank'>Debugging within VS Code</a></li>",
               "</ul>"],
             "highlight": "js"
         }]
