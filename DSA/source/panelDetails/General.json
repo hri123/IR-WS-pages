@@ -24,6 +24,15 @@
               "<li><a href='http://www.ybrikman.com/writing/2015/04/20/migrating-from-blogger-to-github-pages/' target='_blank'>Migrating from Blogger to GitHub Pages</a></li>",
               "</ul>"],
             "highlight": "js"
+        }, {
+            "filename": "",
+            "description": ["<h5>Initialize a folder for using nodejs.</h5><ul>",
+              "<li>npm init</li>",
+              "<li>npm install</li>",
+              "<li>create .gitignore file and add 'node_modules/' to it</li>",
+              "<li>node index.js</li>",
+              "</ul>"],
+            "highlight": "js"
         }]
     }, {
         "panelName": "Editors",
