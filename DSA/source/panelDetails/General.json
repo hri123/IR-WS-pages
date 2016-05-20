@@ -11,6 +11,7 @@
         "sources": [{
             "filename": "",
             "description": ["<ul>",
+              "<li><a href='https://hypothes.is/stream?q=user:hri123' target='_blank'>Bookmark</a></li>", 
               "<li>In the search input - can you take a natural language question as input - like - help me learn the basics of javascript - using watson apis ?</li>",
               "</ul>"],
             "highlight": "js"

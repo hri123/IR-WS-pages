@@ -54,5 +54,12 @@
             "description": ["Event Loop"],
             "highlight": "js"
         }]
+    }, {
+        "panelName": "CSS",
+        "sources": [{
+            "filename": "source/JavaScript/css_tips_tricks.js",
+            "description": ["CSS - tips and tricks"],
+            "highlight": "js"
+        }]
     }]
 }
