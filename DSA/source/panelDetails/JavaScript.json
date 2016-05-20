@@ -35,5 +35,12 @@
             "description": ["React Native"],
             "highlight": "js"
         }]
+    }, {
+        "panelName": "JavaScript - NodeJS",
+        "sources": [{
+            "filename": "",
+            "description": ["Event Loop"],
+            "highlight": "js"
+        }]
     }]
 }
