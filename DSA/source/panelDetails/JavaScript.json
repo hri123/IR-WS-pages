@@ -16,9 +16,10 @@
         }, {
             "filename": "source/JavaScript/module_pattern.js",
             "description": ["Module Pattern - AMD, CommonJS <br/><ul><li>",
-              "AMD - as used in Dojo</li><li>",
-              "CommonJS - as used in Nodejs</li><li>",
-              "ES Harmony Module Proposals</li></ul>"],
+                "AMD - as used in Dojo</li><li>",
+                "CommonJS - as used in Nodejs</li><li>",
+                "ES Harmony Module Proposals</li></ul>"
+            ],
             "highlight": "js"
         }]
     }, {
