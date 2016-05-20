@@ -45,6 +45,13 @@
             "description": ["Cloud - AWS - Concepts"],
             "highlight": "js"
         }]
+    }, {
+        "panelName": "Networking",
+        "sources": [{
+            "filename": "source/Concepts/networking.js",
+            "description": ["Networking - Basics"],
+            "highlight": "js"
+        }]
     }]
 }
 
