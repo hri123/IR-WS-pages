@@ -16,6 +16,15 @@
             "highlight": "js"
         }]
     }, {
+        "panelName": "Metadata",
+        "sources": [{
+            "filename": "",
+            "description": ["<ul>",
+              "<li>Big Words & Big Words Details</li>",
+              "</ul>"],
+            "highlight": "js"
+        }]
+    }, {
         "panelName": "Editors",
         "sources": [{
             "filename": "",

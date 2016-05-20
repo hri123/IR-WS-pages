@@ -13,6 +13,38 @@
             "description": ["Source Control - GIT / RTC - concepts"],
             "highlight": "js"
         }]
+    }, {
+        "panelName": "Agile",
+        "sources": [{
+            "filename": "",
+            "description": ["Agile - Concepts"],
+            "highlight": "js"
+        }]
+    }, {
+        "panelName": "Architecture",
+        "sources": [{
+            "filename": "",
+            "description": ["<ul>",
+                "<li>Performance</li>",
+                "<li>Scaling</li>",
+                "</ul>"],
+            "highlight": "js"
+        }]
+    }, {
+        "panelName": "Cloud",
+        "sources": [{
+            "filename": "source/Concepts/cloud_bluemix.js",
+            "description": ["Cloud - Bluemix / Softlayer - Concepts"],
+            "highlight": "js"
+        }, {
+            "filename": "source/Concepts/cloud_concepts.js",
+            "description": ["Cloud - Concepts"],
+            "highlight": "js"
+        }, {
+            "filename": "source/Concepts/cloud_aws.js",
+            "description": ["Cloud - AWS - Concepts"],
+            "highlight": "js"
+        }]
     }]
 }
 
