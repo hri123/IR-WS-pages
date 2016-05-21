@@ -13,6 +13,12 @@
 </ol>
 <br />
 
+<h4>Patterns&Principles - patterns and principles</h4>
+<ul>
+    <li>whiteboard - www.osgi.org/wiki/uploads/Links/whiteboard.pdf</li>
+    <li>hollywood principle - "Don't call us, we'll call you"</li>
+</ul>
+    
 */
 
 })();
