@@ -206,3 +206,28 @@
 
 
 })();
+
+(function ES6() {
+
+"use strict"; // without this - Block-scoped declarations (let, const, function, class) not yet supported outside strict mode
+
+class Foo {
+  constructor(name) {
+    this._name = name;
+  }
+ 
+  getName() {
+    return this._name;
+  }
+}
+ 
+class Bar extends Foo {
+  getName() {
+    return super.getName() + ' Doe';
+  }
+}
+ 
+var bar = new Bar('John');
+console.log(bar.getName()); // John Doe
+  
+})();
