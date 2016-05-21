@@ -159,7 +159,7 @@
     Function.prototype.__proto__ == Object.prototype // true
   );
 
-  // <h4>__proto__</h4>
+  // <h4><b><u>__proto__</b></u></h4>
   // a function's __proto__ points to the same object Function.prototype points to
   console.log(
     a_constructor.__proto__ == Function.prototype // true
@@ -176,7 +176,7 @@
     c.__proto__ == a_constructor.prototype // true
   );
 
-  // <h4>prototype</h4>
+  // <h4><b><u>prototype</b></u></h4>
   // a function's prototype points to the same object, that is also referred by the object's __proto__ property, 
   // of all the objects that were created using this function as constructor
   console.log(
@@ -188,7 +188,7 @@
     b.prototype == undefined // true
   );
 
-  // <h4>constructor</h4>
+  // <h4><b><u>constructor</b></u></h4>
   // a function's constructor is meaningless, a function by itself is a constructor
 
   // an object's constructor refers to the constructor function it was created with
