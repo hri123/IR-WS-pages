@@ -5,6 +5,10 @@
             "filename": "source/Java/design_patterns.js",
             "description": ["Java Design Patterns"],
             "highlight": "js"
+        }, {
+            "filename": "source/Java/patterns_principles.js",
+            "description": ["Patterns and Principles"],
+            "highlight": "js"
         }]
     }]
 }

@@ -5,6 +5,18 @@
 /*
 
 
+<h4>
+<a href="http://www.tutorialspoint.com/design_pattern/design_pattern_overview.htm" target="_blank">Design Pattern - Overview</a></h4>
+<br />
+General Notes:<br />
+<br />
+<a href="http://stackoverflow.com/questions/1673841/examples-of-gof-design-patterns" rel="nofollow" target="_blank">TODO: add one or more real world examples from here for each of the design patterns</a><br />
+<br />
+<a href="http://www.makeuseof.com/dir/yuml-free-uml-diagrams/" rel="nofollow" target="_blank">Using yuml to create class diagrams</a><br />
+<br />
+<br />
+
+
 <h3>Creational Patterns</h3>
 
 <div class="container">
@@ -470,22 +482,799 @@ public class ProxyExample {
 
 <h3>Behavioural Patterns</h3>
 
+<div class="container">
+  <h4>Chain of Responsibility</h4>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p>e.g.: Java Servlet Filter</p>
+      <p>Approval process:</p>
+      <img border="0" height="100" src="source/Java/images/ChainOfResponsibility1.png" width="740" />
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h4>Command</h4>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p>
+public Interface Command() {
+  public void execute() {
+  }
+}      
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h4>Interpreter</h4>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <img border="0" height="250" src="source/Java/images/Interpreter1.jpg" width="440" />
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <p>
+The following Reverse Polish notation example illustrates the interpreter pattern. The grammar
+expression ::= plus | minus | variable | number
+plus ::= expression expression '+'
+minus ::= expression expression '-'
+variable  ::= 'a' | 'b' | 'c' | ... | 'z'
+digit = '0' | '1' | ... '9'
+number ::= digit | digit numberdefines a language which contains reverse Polish expressions like:
+a b +
+a b c + -
+a b + c a - -Following the interpreter pattern there is a class for each grammar rule.          
+          </p>
+          <p>
+import java.util.Map;
+ 
+interface Expression {
+    public int interpret(Map<String,Expression> variables);
+}
+ 
+class Number implements Expression {
+    private int number;
+    public Number(int number)       { this.number = number; }
+    public int interpret(Map<String,Expression> variables)  { return number; }
+}
+ 
+class Plus implements Expression {
+    Expression leftOperand;
+    Expression rightOperand;
+    public Plus(Expression left, Expression right) { 
+        leftOperand = left; 
+        rightOperand = right;
+    }
+ 
+    public int interpret(Map<String,Expression> variables)  { 
+        return leftOperand.interpret(variables) + rightOperand.interpret(variables);
+    }
+}
+ 
+class Minus implements Expression {
+    Expression leftOperand;
+    Expression rightOperand;
+    public Minus(Expression left, Expression right) { 
+        leftOperand = left; 
+        rightOperand = right;
+    }
+ 
+    public int interpret(Map<String,Expression> variables)  { 
+        return leftOperand.interpret(variables) - rightOperand.interpret(variables);
+    }
+}
+ 
+class Variable implements Expression {
+    private String name;
+    public Variable(String name)       { this.name = name; }
+    public int interpret(Map<String,Expression> variables)  { 
+        if(null==variables.get(name)) return 0; //Either return new Number(0).
+        return variables.get(name).interpret(variables); 
+    }
+}          
+          </p>
+          <p>
+While the interpreter pattern does not address parsing[2] a parser is provided for completeness.          
+          </p>
+          <p>
+import java.util.Map;
+import java.util.Stack;
+ 
+class Evaluator implements Expression {
+    private Expression syntaxTree;
+ 
+    public Evaluator(String expression) {
+        Stack<Expression> expressionStack = new Stack<Expression>();
+        for (String token : expression.split(" ")) {
+            if  (token.equals("+")) {
+                Expression subExpression = new Plus(expressionStack.pop(), expressionStack.pop());
+                expressionStack.push( subExpression );
+            }
+            else if (token.equals("-")) {
+                // it's necessary remove first the right operand from the stack
+                Expression right = expressionStack.pop();
+                // ..and after the left one
+                Expression left = expressionStack.pop();
+                Expression subExpression = new Minus(left, right);
+                expressionStack.push( subExpression );
+            }
+            else                        
+                expressionStack.push( new Variable(token) );
+        }
+        syntaxTree = expressionStack.pop();
+    }
+ 
+    public int interpret(Map<String,Expression> context) {
+        return syntaxTree.interpret(context);
+    }
+}          
+          </p>
+          <p>
+Finally evaluating the expression "w x z - +" with w = 5, x = 10, and z = 42.          
+          </p>
+          <p>
+import java.util.Map;
+import java.util.HashMap;
+ 
+public class InterpreterExample {
+    public static void main(String[] args) {
+        String expression = "w x z - +";
+        Evaluator sentence = new Evaluator(expression);
+        Map<String,Expression> variables = new HashMap<String,Expression>();
+        variables.put("w", new Number(5));
+        variables.put("x", new Number(10));
+        variables.put("z", new Number(42));
+        int result = sentence.interpret(variables);
+        System.out.println(result);
+    }
+}          
+          </p>      
+        </div>
+      </div>
+      <a href="http://en.wikipedia.org/wiki/Interpreter_pattern" target="_blank">Inspired from here</a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h4>Iterator</h4>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p>
+Java Iterator -> hasNext() & next()
+the class should implement those two methods      
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h4>Mediator</h4>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p>To reduce coupling between classes that communicate with each other.</p>
+      <img border="0" height="250" src="source/Java/images/Mediator1.jpg" width="440" />
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <p>
+//Mediator interface
+public interface Mediator {
+
+    public void send(String message, Colleague colleague);
+
+}
+
+//Colleage interface
+public abstract Colleague {
+
+    private Mediator mediator;
+    public Colleague(Mediator m) {
+        mediator = m;
+    }
+
+    //send a message via the mediator
+    public void send(String message) {
+
+        mediator.send(message, this);
+
+    }
+
+    //get access to the mediator
+    public Mediator getMediator() {
+        return mediator;
+    }
+    
+    public abstract void receive(String message);
+
+}
+
+public class ApplicationMediator implements Mediator {
+
+    private ArrayList < Colleague > colleagues;
+    public ApplicationMediator() {
+        colleagues = new ArrayList < Colleague > ();
+    }
+
+    public void addColleague(Colleague colleague)
+    {
+        colleagues.add(colleague);
+    }
+
+    public void send(String message, Colleague originator)
+    {
+        //let all other screens know that this screen has changed
+
+        for (Colleague colleague: colleagues)
+        {
+            //don't tell ourselves
+            if (colleague != originator)
+            {
+                colleage.receive(message);
+            }
+        }
+    }
+}
+
+public class ConcreteColleague extends Colleague
+{
+    public void receive(String message)
+    {
+        System.out.println("Colleague Received: " + message);
+    }
+}
+
+public class MobileColleague extends Colleague
+{
+    public void receive(String message)
+    {
+        System.out.println("Mobile Received: " + message);
+    }
+}
+
+public class Client
+{
+    public static void main(String[] args)
+    {
+        ApplicationMediator mediator = new ApplicationMediator();
+        ConcreteColleague desktop = new ConcreteColleague(mediator)
+
+        ConcreteColleague mobile = new MobileColleague(mediator)
+
+        mediator.addColleague(desktop);
+        mediator.addColleague(mobile);
+
+        desktop.send("Hello World");
+
+        mobile.send("Hello");
+    }
+}          
+          </p>
+        </div>
+      </div>
+      <a href="http://java.dzone.com/articles/design-patterns-mediator" target="_blank">Inspired from here</a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h4>Memento</h4>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p>used in undo frameworks to bring an object back to a previous state</p>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <p>
+//Memento
+public class EditorMemento
+{
+    private final String editorState;
+    public EditorMemento(String state)
+    {
+        editorState = state;
+    }
+    public String getSavedState()
+    {
+        return editorState;
+    }
+}
+//Originator
+public class Editor
+{
+    //state
+    public String editorContents;
+    public void setState(String contents)
+    {
+        this.editorContents = contents;
+    }
+    public EditorMemento save()
+    {
+        return new EditorMemento(editorContents);
+    }
+    public void restoreToState(EditorMemento memento)
+    {
+        editorContents = memento.getSavedState();
+    }
+}
+
+//Caretaker
+
+main() {
+
+  originator = new();
+  orig.setstate('state1');
+  orig.setstate('state2');
+
+  memento = orig.save();
+  orig.setstate('state4');
+  orig.restoreToState(memento);
+
+}          
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h4>Observer</h4>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <p>
+import java.util.Observable;
+public class DataStore extends Observable
+{
+    private String data;
+    public String getData()
+    {
+        return data;
+    }
+    public void setData(String data)
+    {
+        this.data = data;
+        //mark the observable as changed
+        setChanged();
+    }
+}
+public class Screen implements Observer {
+    @Override
+    public void update(Observable o, Object arg) {
+        //act on the update
+    }
+}
+Screen screen = new Screen();
+DataStore dataStore = new DataStore();
+//register observer
+dataStore.addObserver(screen);
+//send a notification
+dataStore.notifyObservers();          
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h4>State</h4>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p>very ||| to strategy</p>
+      <a href="http://onjavahell.blogspot.in/2009/05/simple-example-of-state-design-pattern.html" target="_blank">Inspired from here</a>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <p>// without state design pattern</p>
+          <p>
+public class Pizza {
+ 
+ public final static int COOKED = 0;
+ public final static int BAKED = 1;
+ public final static int DELIVERED = 2;
+ 
+ private String name;
+ 
+ int state = COOKED;
+ 
+ public String getName() {
+  return name;
+ }
+ 
+ public void setName(String name) {
+  this.name = name;
+ }
+ 
+ public int getState() {
+  return state;
+ }
+ 
+ public void setState(int state) {
+  this.state = state;
+ }
+ 
+ public void bake() throws Exception {
+  
+  if(state == COOKED) {
+   System.out.print("Baking the pizza...");
+   state = BAKED;
+  }
+  else if(state == BAKED) {
+   throw new Exception("Can't bake a pizza already baked");
+  }
+  else if(state == DELIVERED) {
+   throw new Exception("Can't bake a pizza already delivered");
+  }
+ } 
+ 
+ public void deliver() throws Exception {
+  
+  if(state == COOKED) {
+   throw new Exception("Can't deliver a pizza not baked yet");
+  }
+  else if(state == BAKED) {
+   System.out.print("Delivering the pizza...");
+   state = DELIVERED;
+  }
+  else if(state == DELIVERED) {
+   throw new Exception("Can't deliver a pizza already delivered");
+  }
+ }
+}          
+          </p>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <p>// after applying state design pattern</p>
+          <p>
+public interface PizzaState {
+
+ void bake() throws Exception;
+
+ void deliver() throws Exception;
+}
+
+public class CookedPizzaState implements PizzaState {
+ 
+ private Pizza pizza;
+ 
+ public CookedPizzaState(Pizza pizza) {
+  this.pizza = pizza;
+ }
+
+ public void bake() throws Exception {
+  System.out.print("Baking the pizza...");
+  pizza.setState(pizza.getBakedState());
+ }
+
+ public void deliver() throws Exception {
+  throw new Exception("Can't deliver a pizza not baked yet");
+ }
+
+}
+
+public class Pizza {
+ 
+ PizzaState cookedState;
+ PizzaState bakedState;
+ PizzaState deliveredState;
+ 
+ private String name;
+ 
+ //State initialization
+ private PizzaState state = cookedState;
+ 
+ public Pizza() {
+  cookedState = new CookedPizzaState(this);
+  bakedState = new BakedPizzaState(this);
+  deliveredState = new DeliveredPizzaState(this);
+ }
+ 
+ public String getName() {
+  return name;
+ }
+
+ public void setName(String name) {
+  this.name = name;
+ }
+
+ public PizzaState getState() {
+  return state;
+ }
+
+ public void setState(PizzaState state) {
+  this.state = state;
+ }
+ 
+ public void bake() throws Exception {
+  this.state.bake();
+ } 
+ 
+ public void deliver() throws Exception {
+  this.state.deliver();
+ }
+
+ public PizzaState getCookedState() {
+  return createdState;
+ }
+
+ public PizzaState getBakedState() {
+  return bakedState;
+ }
+
+ public PizzaState getDeliveredState() {
+  return deliveredState;
+ }
+}          
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h4>Strategy</h4>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p>if too much specialization logic in the sub classes, it is better to use an algorithm variable to move the logic outside the subclasses so that the business logic is not spread in the sub classes</p>
+      <a href="http://shafaetsplanet.com/uploads/pdf/Design_Patterns_For_Dummies.pdf" target="_blank">Inspired from here</a>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <p>//Before Stategy pattern</p>
+          <p>
+public abstract class Vehicle {
+    public void go() {
+        System.out.println(“Now I’ m driving.”);
+    }
+}
 
 
+public class StreetRacer extends Vehicle {}
+
+public class FormulaOne extends Vehicle {}
+
+
+public class Helicopter extends Vehicle {
+    public void go() {
+        System.out.println(“Now I’ m flying.”);
+    }
+}
+
+
+public class Jet extends Vehicle {
+    public void go() {
+        System.out.println(“Now I’ m flying fast.”);
+    }
+}          
+          </p>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <p>(has-a instead of is-a)
+When converted to strategy pattern it looks like below -></p>
+          <p>
+public interface GoAlgorithm {
+    public void go();
+}
+
+
+public class GoByDrivingAlgorithm implements GoAlgorithm {
+    public void go() {
+        System.out.println(“Now I’ m driving.”);
+    }
+}
+
+
+public class GoByFlying implements GoAlgorithm {
+    public void go() {
+        System.out.println(“Now I’ m flying.”);
+    }
+}
+
+
+public class GoByFlyingFast implements GoAlgorithm {
+    public void go() {
+        System.out.println(“Now I’ m flying fast.”);
+    }
+}
+
+
+public abstract class Vehicle {
+    private GoAlgorithm goAlgorithm;
+    public void setGoAlgorithm(GoAlgorithm algorithm) {
+        goAlgorithm = algorithm;
+    }
+
+    public void go() {
+        goAlgorithm.go();
+    }
+
+}
+
+
+public class StreetRacer extends Vehicle {
+    public StreetRacer() {
+        setGoAlgorithm(new GoByDrivingAlgorithm());
+    }
+}          
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <div class="container">
-  <h4>Name</h4>
+  <h4>Template Method</h4>
   <div class="panel panel-default">
     <div class="panel-body">
-      <p>Text</p>
-      <img border="0" height="250" src="source/Java/images/AbstractFactory1.png" width="440" />
-      <a href="" target="_blank">link</a>
+      <img border="0" height="350" src="source/Java/images/TemplateMethod1.jpg" width="240" />
+      <a href="http://java.dzone.com/articles/design-patterns-template-method" target="_blank">Inspired from here</a>
       <div class="panel panel-default">
         <div class="panel-body">
-          <p>Text</p>
-          <img border="0" height="250" src="source/Java/images/AbstractFactory1.png" width="440" />
-          <a href="" target="_blank">link</a>
+          <p>
+public abstract class CrossCompiler
+{
+    public final void crossCompile()
+    {
+        collectSource();
+        compileToTarget();
+    }
+    protected abstract void collectSource();
+    protected abstract void compileToTarget();
+}
+public class IPhoneCompiler extends CrossCompiler
+{
+    protected void collectSource()
+    {
+        //anything specific to this class
+    }
+    protected void compileToTarget()
+    {
+        //iphone specific compilation
+    }
+}
+public class AndroidCompiler extends CrossCompiler
+{
+    protected void collectSource()
+    {
+        //anything specific to this class
+    }
+    protected void compileToTarget()
+    {
+        //android specific compilation
+    }
+}
+public class Client
+{
+    public static void main(String[] args)
+    {
+        CrossCompiler iphone = new IPhoneCompiler();
+        iphone.crossCompile();
+        CrossCompiler android = new AndroidCompiler();
+        android.crossCompile();
+    }
+}          
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <h4>Visitor</h4>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <a href="http://snehaprashant.blogspot.in/2009/01/visitor-pattern-in-java.html" target="_blank">Inspired from here</a>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <p>
+// Visitor
+public interface JavaFeatureVisitor {
+ void visit(Collections collections);
+ void visit(Generics generics);
+ void visitJavaFeatures(Java java);
+}
+
+// Visitable
+public interface JavaFeature {
+ void accept(JavaFeatureVisitor visitor);
+}
+
+
+// Concrete Visitables
+class Collections implements JavaFeature{
+
+ private String name;
+ 
+ Collections(String name) {
+  this.name = name;
+ }
+ String getName() {
+  return this.name;
+ }
+ public void accept(JavaFeatureVisitor visitor) {
+  visitor.visit(this);
+ }
+}
+
+
+class Generics implements JavaFeature{
+ 
+ public void accept(JavaFeatureVisitor visitor) {
+  visitor.visit(this);
+ }
+}
+
+public class Java {
+ 
+ JavaFeature[] javaFeatures;
+ 
+ public JavaFeature [] getJavaFeatures(){
+  return javaFeatures.clone();
+ }
+ public Java() {
+  this.javaFeatures = new JavaFeature[]
+                                 { new Collections(" List "), new Collections(" Set "),
+    new Collections(" Map ") ,new Generics()};
+ }
+}
+
+// Concrete Visitors
+public class JavaFeatureReadVisitor implements JavaFeatureVisitor {
+ 
+ public void visit(Collections collections) {      
+  System.out.println("Going through "+ collections.getName()
+    + " Collections");
+ }
+ public void visit(Generics generics) {
+  System.out.println("Going through  generics");
+ }
+ public void visitJavaFeatures(Java java) {
+  System.out.println("\nLearning Java");
+  for(JavaFeature javaFeature : java.getJavaFeatures()) {
+   javaFeature.accept(this);
+  }
+  System.out.println("Got an Idea of Java Language");
+ }
+}
+
+public class JavaFeatureImplVisitor implements JavaFeatureVisitor {
+ 
+ public void visit(Collections collections) {
+  System.out.println("using Collections "+ collections.getName());
+ }
+ public void visit(Generics generics) {
+  System.out.println("using Generics");
+ }
+ public void visitJavaFeatures(Java java) {
+  System.out.println("\nImplementing Java Features");
+  for(JavaFeature javaFeature : java.getJavaFeatures()) {
+   javaFeature.accept(this);
+  }
+  System.out.println("Very useful features");
+ }
+ 
+}
+
+
+public class VisitorDemo {
+ static public void main(String[] args){
+  Java java = new Java();
+  JavaFeatureVisitor learnJavaFeature = new JavaFeatureReadVisitor();
+  JavaFeatureVisitor implJavaFeature = new JavaFeatureImplVisitor();
+  learnJavaFeature.visitJavaFeatures(java);
+  implJavaFeature.visitJavaFeatures(java);
+ }
+}          
+          </p>
         </div>
       </div>
     </div>
