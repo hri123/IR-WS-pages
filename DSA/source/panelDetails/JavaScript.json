@@ -32,6 +32,16 @@
                 "</ul>"
             ],
             "highlight": "js"
+        }, {
+            "filename": "source/JavaScript/Language/scope.js",
+            "description": ["<a href='http://dmitrysoshnikov.com/ecmascript/javascript-the-core/' target='_blank'>ECMA-262-3 / ES3</a><ul>",
+                "<li>Core</li>",
+                "<li>Scope</li>",
+                "<li></li>",
+                "<li></li>",
+                "</ul>"
+            ],
+            "highlight": "js"
         }]
     }, {
         "panelName": "JavaScript - Angular",
