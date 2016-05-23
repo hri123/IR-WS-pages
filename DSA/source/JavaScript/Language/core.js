@@ -233,7 +233,7 @@ console.log(bar.getName()); // John Doe
 })();
 
 
-// <h4><b><u>HoistingImmediately invoked function expression (IIFE)</b></u></h4>
+// <h4><b><u>Immediately invoked function expression (IIFE)</b></u></h4>
 // (function() { ... }());
 
 (function() {
