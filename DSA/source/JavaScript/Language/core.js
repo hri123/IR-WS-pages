@@ -594,17 +594,18 @@ console.log(
 
 // the code of the "foo" function never changes, but the "this" value differs in every activation
 
-this.name = 'outermost function';
+this.name = 'outer function';
  
 function foo() {
   console.log(this.name);
 }
+foo.prototype.name = 'function - foo.prototype'
  
 // caller activates "foo" (callee) and
 // provides "this" for the callee
  
-foo(); // global object
-foo.prototype.constructor(); // foo.prototype
+foo(); // global object // prints 'outer function'
+foo.prototype.constructor(); // foo.prototype // prints 'function - foo.prototype' even though 'foo === foo.prototype.constructor' is true 
  
 var bar = {
   name: 'bar',
@@ -613,17 +614,34 @@ var bar = {
  
 bar.baz(); // bar
 
-// TODO: I think it is eval
-
+// Grouping operator
 (bar.baz)(); // also bar
-(bar.baz = bar.baz)(); // but here is global object
-(bar.baz, bar.baz)(); // also global object
-(false || bar.baz)(); // also global object
+
+// since bar.baz is not an expression as expected by grouping operator, bar.baz is not evaluated and just returned
+// (this is similar to (function() {})() where the function inside the parentheses is just returned)
+// http://stackoverflow.com/a/30365375/512126 
+
+// http://perfectionkills.com/know-thy-reference/
+// http://dmitrysoshnikov.com/ecmascript/chapter-3-this/#function-call-and-non-reference-type 
+
+(bar.baz = bar.baz)(); // prints 'outer function'
+
+(bar.baz, bar.baz)(); // prints 'outer function'
+(false || bar.baz)(); // prints 'outer function'
  
 var otherFoo = bar.baz;
-otherFoo(); // again global object    
+otherFoo(); // prints 'outer function'
 
-// TODO: how to pass this - the this I require like in dojo hitch
+
+// using apply and call, the this value can be set at the time of function invocation
+var outsider = {
+  name: 'outsider'
+};
+
+// dojo.hitch, dojo.partial
+// "A for array and C for comma."
+foo.apply(outsider, []);
+foo.call(outsider, 'foo does not take any args');
     
 })();
 
