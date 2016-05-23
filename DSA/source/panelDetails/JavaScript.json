@@ -37,7 +37,19 @@
             "description": ["<a href='http://dmitrysoshnikov.com/ecmascript/javascript-the-core/' target='_blank'>ECMA-262-3 / ES3</a><ul>",
                 "<li>Core</li>",
                 "<li>Scope</li>",
+                "<li>Closures</li>",
                 "<li></li>",
+                "</ul>"
+            ],
+            "highlight": "js"
+        }, {
+            "filename": "",
+            "description": ["TODO<ul>",
+                "<li>Core</li>",
+                "<li>SpiderMonkey</li>",
+                "<li>search for 'JavaScript Concepts' in google</li>",
+                "<li>mixin</li>",
+                "<li>ES6 - lexical environment</li>",
                 "<li></li>",
                 "</ul>"
             ],
