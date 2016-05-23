@@ -612,17 +612,15 @@ var bar = {
   baz: foo
 };
  
+// http://dmitrysoshnikov.com/ecmascript/chapter-3-this/#function-call-and-non-reference-type 
+
 bar.baz(); // bar
 
-// Grouping operator
+// Grouping operator ()
+// The next 4 prints are not understood clearly, they are explained here - http://perfectionkills.com/know-thy-reference/
 (bar.baz)(); // also bar
 
-// since bar.baz is not an expression as expected by grouping operator, bar.baz is not evaluated and just returned
-// (this is similar to (function() {})() where the function inside the parentheses is just returned)
 // http://stackoverflow.com/a/30365375/512126 
-
-// http://perfectionkills.com/know-thy-reference/
-// http://dmitrysoshnikov.com/ecmascript/chapter-3-this/#function-call-and-non-reference-type 
 
 (bar.baz = bar.baz)(); // prints 'outer function'
 
