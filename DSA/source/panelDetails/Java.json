@@ -9,6 +9,18 @@
             "filename": "source/Java/patterns_principles.js",
             "description": ["Patterns and Principles"],
             "highlight": "js"
+        }, {
+            "filename": "source/Java/multi_threading.js",
+            "description": ["Multi-Threading"],
+            "highlight": "js"
+        }]
+    }, {
+        "panelName": "J2EE / JEE",
+        "sources": [{
+            "filename": "source/Java/j2ee_jee.js",
+            "description": ["J2EE Design Patterns"
+                , ", Core"],
+            "highlight": "js"
         }]
     }]
 }

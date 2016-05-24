@@ -52,6 +52,15 @@
             "description": ["Networking - Basics"],
             "highlight": "js"
         }]
+    }, {
+        "panelName": "Unix",
+        "sources": [{
+            "filename": "source/Concepts/bash_scripting.js",
+            "description": ["<ul>",
+              "<li><a href='https://www.youtube.com/watch?v=4txbMcGPs1E' target='_blank'>Coding School Presentation - Everything You Wanted to Know About Bash Scripting - Hack Reactor</a></li>",
+              "</ul>"],
+            "highlight": "js"
+        }]
     }]
 }
 

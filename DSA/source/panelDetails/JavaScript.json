@@ -44,6 +44,7 @@
                 "<li>mixin</li>",
                 "<li>ES6 - lexical environment</li>",
                 "<li>http://www.2ality.com/2014/01/eval.html</li>",
+                "<li>http://perfectionkills.com/know-thy-reference/</li>",
                 "</ul>"
             ],
             "highlight": "js"
