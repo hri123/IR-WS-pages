@@ -73,6 +73,12 @@
               "<li>Database - DB2</li>",
               "</ul>"],
             "highlight": "js"
+        }, {
+            "filename": "source/Concepts/big_data.js",
+            "description": ["<ul>",
+              "<li>Big Data - big-data-basics-hadoop-mapreduce-hive-pig-spark</li>",
+              "</ul>"],
+            "highlight": "js"
         }]
     }]
 }
