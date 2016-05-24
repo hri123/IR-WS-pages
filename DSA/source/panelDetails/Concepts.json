@@ -5,6 +5,10 @@
             "filename": "",
             "description": ["CI - Travis / Jenkins - concepts"],
             "highlight": "js"
+        }, {
+            "filename": "source/Concepts/maven.js",
+            "description": ["Build / Dependency Management - Maven"],
+            "highlight": "js"
         }]
     }, {
         "panelName": "Version Control",

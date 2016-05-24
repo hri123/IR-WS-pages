@@ -13,6 +13,14 @@
             "filename": "source/Java/multi_threading.js",
             "description": ["Multi-Threading"],
             "highlight": "js"
+        }, {
+            "filename": "source/Java/debugging.js",
+            "description": ["Debugging in Java"],
+            "highlight": "js"
+        }, {
+            "filename": "source/Java/memory.js",
+            "description": ["Java / JVM - Memory / Internals"],
+            "highlight": "js"
         }]
     }, {
         "panelName": "J2EE / JEE",
@@ -20,6 +28,13 @@
             "filename": "source/Java/j2ee_jee.js",
             "description": ["J2EE Design Patterns"
                 , ", Core"],
+            "highlight": "js"
+        }]
+    }, {
+        "panelName": "Eclipse",
+        "sources": [{
+            "filename": "source/Java/eclipse.js",
+            "description": ["Eclipse"],
             "highlight": "js"
         }]
     }]
