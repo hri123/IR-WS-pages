@@ -38,11 +38,25 @@
             "highlight": "js"
         }]
     }, {
-        "panelName": "Editors",
+        "panelName": "Tools",
         "sources": [{
             "filename": "",
-            "description": ["<ul>",
+            "description": ["Git Desktop Client<ul>",
+              "<li>https://desktop.github.com/</li>",
+              "<li>https://www.gitkraken.com/</li>",              
+              "</ul>"],
+            "highlight": "js"
+        }, {
+            "filename": "",
+            "description": ["Editors<ul>",
               "<li>Microsoft's Visual Studio Code</li>",
+              "</ul>"],
+            "highlight": "js"
+        }, {
+            "filename": "",
+            "description": ["Git Providers<ul>",
+              "<li>http://github.com/</li>",
+              "<li>https://bitbucket.org/</li>",
               "</ul>"],
             "highlight": "js"
         }]
