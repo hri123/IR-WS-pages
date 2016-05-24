@@ -14,14 +14,6 @@
             "description": "MVC vs MVP vs MVVM",
             "highlight": "js"
         }, {
-            "filename": "source/JavaScript/module_pattern.js",
-            "description": ["Module Pattern - AMD, CommonJS <br/><ul><li>",
-                "AMD - as used in Dojo</li><li>",
-                "CommonJS - as used in Nodejs</li><li>",
-                "ES Harmony Module Proposals</li></ul>"
-            ],
-            "highlight": "js"
-        }, {
             "filename": "source/JavaScript/Language/core.js",
             "description": ["<a href='http://dmitrysoshnikov.com/ecmascript/javascript-the-core/' target='_blank'>ECMA-262-3 / ES3</a>&nbsp;<a href='http://dmitrysoshnikov.com/tag/ecma-262-3/' target='_blank'>(ECMA-262-3 in detail)</a><ul>",
                 "<li>Core</li>",
@@ -74,6 +66,21 @@
         "sources": [{
             "filename": "source/JavaScript/css_tips_tricks.js",
             "description": ["CSS - tips and tricks"],
+            "highlight": "js"
+        }]
+    }, {
+        "panelName": "JavaScript - Design Patterns",
+        "sources": [{
+            "filename": "source/JavaScript/DesignPatterns/design_patterns.js",
+            "description": ["General Info"],
+            "highlight": "js"
+        }, {
+            "filename": "source/JavaScript/DesignPatterns/module_pattern.js",
+            "description": ["Module Pattern - AMD, CommonJS <br/><ul><li>",
+                "AMD - as used in Dojo</li><li>",
+                "CommonJS - as used in Nodejs</li><li>",
+                "ES Harmony Module Proposals</li></ul>"
+            ],
             "highlight": "js"
         }]
     }]
