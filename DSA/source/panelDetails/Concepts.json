@@ -65,6 +65,15 @@
               "</ul>"],
             "highlight": "js"
         }]
+    }, {
+        "panelName": "Database - DB2",
+        "sources": [{
+            "filename": "source/Concepts/database_db2.js",
+            "description": ["<ul>",
+              "<li>Database - DB2</li>",
+              "</ul>"],
+            "highlight": "js"
+        }]
     }]
 }
 
