@@ -1,6 +1,44 @@
 ////////////////////////////////////////////////////////////////////////////////
 // Images copied from http://dmitrysoshnikov.com/ecmascript/javascript-the-core //
 
+// IIFE
+(function understanding_IIFE() {
+  
+// function() {
+//   console.log('this does not work');
+// }();
+// SyntaxError: Unexpected token ( - since this is a function declaration and not function expression, a function name is expected
+
+// function namedTheFunc() {
+//   console.log('this also does not work');
+// }();
+// syntax error again because grouping operator () needs to have an expression inside
+
+function namedTheFunc() {
+  console.log('there is no syntax error, but this function is not executed as it is just a declaration');
+}(1);
+
+// The most widely accepted way to tell the parser to expect a function expression is just to wrap it in parens, 
+// because in JavaScript, parens can't contain statements. At this point, when the parser encounters the function keyword,
+//  it knows to parse it as a function expression and not a function declaration.
+(function () {
+  console.log('Inside IIFE'); 
+})();
+
+(function () {
+  console.log('This is different than the previous IIFE, but still works');
+}()); // Crockford recommends this one
+
+// Because the point of the parens or coercing operators is to disambiguate
+// between function expressions and function declarations, they can be
+// omitted when the parser already expects an expression
+var dummyResult = function () {
+  console.log('This is different than the previous IIFE, but still works');
+}();
+
+
+})();
+
 (function understandingPrototype_1() {
 
   // An object is a collection of properties and has a single prototype object. The prototype may be either an object or the null value.
@@ -617,7 +655,8 @@ var bar = {
 bar.baz(); // bar
 
 // Grouping operator ()
-// The next 4 prints are not understood clearly, they are explained here - http://perfectionkills.com/know-thy-reference/
+// The next 4 prints are explained here - http://perfectionkills.com/know-thy-reference/
+// read this section in the link - http://benalman.com/news/2010/11/immediately-invoked-function-expression/#iife - before the above link
 (bar.baz)(); // also bar
 
 // http://stackoverflow.com/a/30365375/512126 

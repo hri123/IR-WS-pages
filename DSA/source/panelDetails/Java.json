@@ -29,6 +29,10 @@
             "description": ["J2EE Design Patterns"
                 , ", Core"],
             "highlight": "js"
+        }, {
+            "filename": "source/Java/jdbc.js",
+            "description": ["JDBC"],
+            "highlight": "js"
         }]
     }, {
         "panelName": "Eclipse",
