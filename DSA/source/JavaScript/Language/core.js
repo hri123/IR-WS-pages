@@ -37,6 +37,20 @@ var dummyResult = function () {
 }();
 
 
+// If you don't care about the return value, or the possibility of making
+// your code slightly harder to read, you can save a byte by just prefixing
+// the function with a unary operator.
+
+true && function(){ /* code */ }();
+0, function(){ /* code */ }();
+!function(){ /* code */ }();
+~function(){ /* code */ }();
+-function(){ /* code */ }();
++function(){ /* code */ }();
+new function(){ /* code */ }
+new function(){ /* code */ }() // Only need parens if passing arguments
+
+
 })();
 
 (function understandingPrototype_1() {
