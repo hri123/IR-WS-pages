@@ -14,6 +14,14 @@ cd into it
 (meteor npm install)
 meteor
 
+to solve es6 syntax issues
+meteor add ecmascript
+http://stackoverflow.com/a/37468456/512126
+
+
+meteor mongo
+db.IterationDetails.find().pretty()
+
 */
 
 })();
