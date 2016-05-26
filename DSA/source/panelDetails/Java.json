@@ -37,6 +37,10 @@
             "filename": "source/Java/jdbc.js",
             "description": ["JDBC"],
             "highlight": "js"
+        }, {
+            "filename": "source/Java/spring.js",
+            "description": ["Spring"],
+            "highlight": "js"
         }]
     }, {
         "panelName": "Eclipse",
