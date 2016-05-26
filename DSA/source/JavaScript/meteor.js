@@ -11,6 +11,7 @@ meteor update iron:router
 
 Copy the Meteor_Seed_Project from Inspinia
 cd into it
+(meteor npm install)
 meteor
 
 */

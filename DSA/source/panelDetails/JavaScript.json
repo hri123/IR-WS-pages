@@ -47,6 +47,10 @@
     }, {
         "panelName": "JavaScript - Frameworks",
         "sources": [{
+            "filename": "source/JavaScript/dojo.js",
+            "description": ["Dojo"],
+            "highlight": "js"
+        }, {
             "filename": "source/JavaScript/meteor.js",
             "description": ["Meteor"],
             "highlight": "js"
