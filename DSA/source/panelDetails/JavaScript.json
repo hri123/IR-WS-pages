@@ -36,6 +36,7 @@
                 "<li>mixin</li>",
                 "<li>ES6 - lexical environment</li>",
                 "<li>http://www.2ality.com/2014/01/eval.html</li>",
+                "<li>https://github.com/getify/You-Dont-Know-JS</li>",
                 "</ul>"
             ],
             "highlight": "js"
