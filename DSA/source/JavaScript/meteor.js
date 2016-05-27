@@ -51,6 +51,12 @@ Minimongo (Client - side cache)
 Tracker (Dependency Tracking) - the functions used to get data on the client are rerun when the the data changes on the database
 Blaze - (reactive HTML rendering)
 
+
+Meteor Advantages:
+
+Same code can be used for server and client
+uses subscription model instead of REST - using websockets
+
 */
 
 })();
