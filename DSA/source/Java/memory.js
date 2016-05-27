@@ -60,7 +60,7 @@ In case you want to log the GC log, add the following:
 You can use heap analyser tools to analyse the heap to identify heap dumps at different intervals in time to find out which packages are accumulating memory and not releasing them on garbage collection.
 
 e.g.:
-http://snappy.watson.ibm.com/yeti/ (Peter F Sweeney , Erik Altman , Nick Mitchell )
+http://snappy.watson.ibm.com/ (Peter F Sweeney , Erik Altman , Nick Mitchell )
 http://www.eclipse.org/mat/ -- this requires a additional plugin, com.ibm.dtfj.feature, Diagnostic Tool Framework for Java, to process .phd files.
 
 

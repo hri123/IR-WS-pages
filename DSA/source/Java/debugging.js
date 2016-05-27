@@ -14,8 +14,8 @@ Eclipse - Remote Debugging external Java Applications
 
 
 When remote debugging is useful:
-1. OPM installed on a machine, you need not run through your OSGI run configuration launch to debug if something is going wrong.
-2. Debug remotely the running OPM on somebody else's machine.
+1. 'Application' installed on a machine, you need not run through your OSGI run configuration launch to debug if something is going wrong.
+2. Debug remotely the running 'Application' on somebody else's machine.
 3. If you can only run your application using the external tools run configuration, like you can run your application only through ant script, then you can connect later using remote debugging.
 
 How remote debugging:

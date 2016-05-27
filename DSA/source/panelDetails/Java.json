@@ -43,6 +43,13 @@
             "highlight": "js"
         }]
     }, {
+        "panelName": "OSGi",
+        "sources": [{
+            "filename": "source/Java/osgi.js",
+            "description": ["OSGi"],
+            "highlight": "js"
+        }]
+    }, {
         "panelName": "Eclipse",
         "sources": [{
             "filename": "source/Java/eclipse.js",
