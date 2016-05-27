@@ -140,4 +140,93 @@ define(["doh/runner", "dojoDemo/myTests/Employee"], function(doh, Employee) {
 
 */
 
+
+/*
+
+Big Words
+
+Frameworks: dojo, angularjs, aurelia
+jQuery
+debugging
+Responsive Design
+CSS
+Testing
+Cross Doman (XSS)
+MVC, MVVM, MVP, etc
+HTML5
+ES6
+ReactJS
+Express - Koa - generators - callbacks - promises
+Minification (UglifyJS)
+Dependency Management - AMD / modules / lazy loading
+mixin, prototypal inheritance, prototype (dojo syntax for inheritance, internals how inheritance implemented in dojo)
+functions are first-class objects (passed as arguments to functions, created within functions, and returned from functions)
+AJAX - Deferreds / Promises - How do you convert an asynchronous method call into a synchronous method call
+Websockets / long polling
+SVG
+Execution Context (Variable Env), syntax parser, Lexical environment
+Hoisting
+undefined
+memory space
+single threaded synchronous execution
+execution stack
+scope chain
+outer environment
+javascript engine
+Events / event loop - sync js - event queue is checked when execution context stack is empty
+closure - dojo hitch / partial - passing arguments to a callback / custom parameters to event handlers
+selectors - jQuery - css selectors, find method vs Dojo uses dojo.byId, dijit.byId, dojo.query
+dynamic typing, coercion
+
+
+
+Big Words Details
+
+Dependency Management - Link1
+
+Best Practices
+
+
+Externalizing strings
+Showing error / exceptions
+JavaScript / Dojo - Interview
+
+1. JavaScript internals are what is critical here, understand the JavaScript language features and design patterns.
+2. Some internals of Dojo are explained in the book - Mastering Dojo
+3. Look at the files in the Tech folder under Dojo
+4. Look at some of the URLs in the chrome browser under Dojo
+5. http://www.slideshare.net/yoavrubin/introduction-to-dojo and other slide decks in slideshare
+6. Widget lifecycle
+http://dojotoolkit.org/documentation/tutorials/1.8/understanding_widgetbase/
+http://dojotoolkit.org/documentation/tutorials/1.6/understanding_widget/
+http://dojotoolkit.org/reference-guide/1.7/dijit/_WidgetBase.html
+7. Private variable in javascript : http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript
+8. From James Thomas
+https://speakerdeck.com/jthomas/beyond-dojo-the-rise-of-asynchronous-module-definition-amd
+https://speakerdeck.com/jthomas/optimising-your-dojo-application-using-the-dojo-build-system
+https://speakerdeck.com/jthomas/javascript-anti-patterns-moving-from-java-to-javascript
+9. Use SVG for icons in html. It is much faster than downloading images for icons.
+10. http://www.html5rocks.com/en/tutorials/internals/howbrowserswork/
+11. 
+Libraries / Utilities
+
+PhantomJS - headless browser
+CasperJS - Navigation utility for PhantomJS
+BehaviourJS -  library for doing unobtrusive javascript using a combination of a CSS Selector library and some simple javascript. (http://stackoverflow.com/questions/11839883/how-to-use-dojo-behavior-on-dojo-widget)
+RequireJS
+JSMock
+Tools
+
+SublimeText, brackets.io - editor
+javascriptlint, jslint - JS Errors
+jsbeautifier - formatter
+JDojo (jazz.net) - Code in Java and compile into JavaScript code
+Misc
+
+ScriptEngine (http://docs.oracle.com/javase/7/docs/technotes/guides/scripting/programmer_guide/)
+
+
+
+*/
+
 })();
