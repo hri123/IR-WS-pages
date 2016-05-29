@@ -46,9 +46,6 @@
             "highlight": "js"
         }]
     }, {
-        "panelName": "JavaScript - Angular",
-        "sources": []
-    }, {
         "panelName": "JavaScript - Frameworks",
         "sources": [{
             "filename": "source/JavaScript/dojo.js",
@@ -62,6 +59,10 @@
     }, {
         "panelName": "JavaScript - Frameworks - Angular",
         "sources": [{
+            "filename": "source/JavaScript/angular.js",
+            "description": ["General Concepts"],
+            "highlight": "js"
+        }, {
             "filename": "https://raw.githubusercontent.com/hri123/IR-WS/master/MEAN/Angular/ngTutorial/FullApp/src/client/app/rb/rb.services.js",
             "description": ["$watch, $digest, $apply"],
             "highlight": "js"
