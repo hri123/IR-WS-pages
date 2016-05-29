@@ -60,6 +60,13 @@
             "highlight": "js"
         }]
     }, {
+        "panelName": "JavaScript - Frameworks - Angular",
+        "sources": [{
+            "filename": "https://raw.githubusercontent.com/hri123/IR-WS/master/MEAN/Angular/ngTutorial/FullApp/src/client/app/rb/rb.services.js",
+            "description": ["$watch, $digest, $apply"],
+            "highlight": "js"
+        }]
+    }, {
         "panelName": "JavaScript - Mobile Frameworks",
         "sources": [{
             "filename": "source/JavaScript/NativeScript.js",
