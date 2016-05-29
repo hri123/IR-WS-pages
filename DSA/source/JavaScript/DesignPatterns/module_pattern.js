@@ -147,14 +147,24 @@ var class_constructor_registration_dojo = function (className, parentArray, obje
     
     extend(returnObject, objectSkeleton);
     
-    global[className] = returnObject;
+    global[className] = function(params) { // add it to global namespace so new can be called from anywhere
         
-    return returnObject;
+        if (returnObject.constructor && typeof returnObject.constructor == 'function') {
+            var constructorObj = new returnObject.constructor(params);
+            extend(returnObject, constructorObj);
+        } 
+        
+        return extend({}, returnObject); // clone the original and return
+    }
     
 };
 
-class_constructor_registration_dojo("my_class_1_dojo", [parentObj1, parentObj2], {
+class_constructor_registration_dojo("my_class_1_dojo", [parentObj1, parentObj2], { // invoke declare method to create and register a class
    i: 10,
+   
+   constructor: function(params) {
+       extend(this, params);
+   },
    
    get: function() {
        return this.i;
@@ -165,9 +175,17 @@ class_constructor_registration_dojo("my_class_1_dojo", [parentObj1, parentObj2],
    }
 });
 
-obj1_dojo = my_class_1_dojo;
+obj1_dojo = new my_class_1_dojo();
 
 console.log(obj1_dojo.get()); // 10
 
+obj2_dojo = new my_class_1_dojo({i: 20});
+
+console.log(obj2_dojo.get()); // 20
+
+obj1_dojo.increment();
+console.log(obj1_dojo.get()); // 11
+obj2_dojo.increment();
+console.log(obj2_dojo.get()); // 21
 
 })();
