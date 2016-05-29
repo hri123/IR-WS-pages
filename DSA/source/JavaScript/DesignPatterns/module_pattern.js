@@ -60,7 +60,7 @@ console.log(counterObject.i); // undefined
 // the above pattern can be used to create one object, what about multiple objects, make it a Java like class
 
 // mixin for the rest of the parents
-function extend(destination, source) {
+function extend(destination, source) { // jquery extend
   for (var k in source) {
     if (source.hasOwnProperty(k)) {
       destination[k] = source[k];
