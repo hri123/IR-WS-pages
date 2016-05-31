@@ -54,7 +54,7 @@ Blaze - (reactive HTML rendering)
 
 Meteor Advantages:
 
-Same code can be used for server and client
+Same code can be used for server and client - (client to server call is like a function call when you code, meteor will manage the ajax calls)
 uses subscription model instead of REST - using websockets
 
 */
