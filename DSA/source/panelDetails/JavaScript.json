@@ -70,6 +70,7 @@
             "filename": "",
             "description": ["<ul>",
             "<li><a href='https://github.com/johnpapa/angular-styleguide'>Style Guide by John Papa endorsed by Angular JS Team</a></li>",
+            "<li>polyfill<li>",
             "</ul>"],
             "highlight": "js"
         }]
