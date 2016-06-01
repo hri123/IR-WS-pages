@@ -66,6 +66,12 @@
             "filename": "https://raw.githubusercontent.com/hri123/IR-WS/master/MEAN/Angular/ngTutorial/FullApp/src/client/app/rb/rb.services.js",
             "description": ["$watch, $digest, $apply"],
             "highlight": "js"
+        }, {
+            "filename": "",
+            "description": ["<ul>",
+            "<li><a href='https://github.com/johnpapa/angular-styleguide'>Style Guide by John Papa endorsed by Angular JS Team</a></li>",
+            "</ul>"],
+            "highlight": "js"
         }]
     }, {
         "panelName": "JavaScript - Mobile Frameworks",
