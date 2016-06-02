@@ -177,6 +177,8 @@ Events / event loop - sync js - event queue is checked when execution context st
 closure - dojo hitch / partial - passing arguments to a callback / custom parameters to event handlers
 selectors - jQuery - css selectors, find method vs Dojo uses dojo.byId, dijit.byId, dojo.query
 dynamic typing, coercion
+cookie
+oauth
 
 
 
