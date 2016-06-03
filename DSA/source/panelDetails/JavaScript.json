@@ -14,15 +14,11 @@
             "description": "JavaScript / Dojo - Cross Domain Communication in the Browser",
             "highlight": "js"
         }, {
-            "filename": "source/JavaScript/mv_star.js",
-            "description": "MVC vs MVP vs MVVM",
-            "highlight": "js"
-        }, {
             "filename": "source/JavaScript/Language/core.js",
             "description": ["<a href='http://dmitrysoshnikov.com/ecmascript/javascript-the-core/' target='_blank'>ECMA-262-3 / ES3</a>&nbsp;<a href='http://dmitrysoshnikov.com/tag/ecma-262-3/' target='_blank'>(ECMA-262-3 in detail)</a><ul>",
                 "<li>Core</li>",
                 "<li>Prototype</li>",
-                "<li>Constructor</li>",
+                "<li>Constructor Pattern</li>",
                 "<li>Scope</li>",
                 "<li>Closures</li>",
                 "<li></li>",                
@@ -118,6 +114,15 @@
                 "CommonJS - as used in Nodejs</li><li>",
                 "ES Harmony Module Proposals</li></ul>"
             ],
+            "highlight": "js"
+        }, {
+            "filename": "",
+            "description": ["Constructor Pattern - see - /JavaScript/Language/core.js"
+                ],
+            "highlight": "js"
+        }, {
+            "filename": "source/JavaScript/mv_star.js",
+            "description": "MVC vs MVP vs MVVM",
             "highlight": "js"
         }]
     }]

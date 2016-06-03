@@ -101,6 +101,31 @@ new function(){ /* code */ }() // Only need parens if passing arguments
   // alternate way to create b -
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create#Using_propertiesObject_argument_with_Object.create() 
   // var b = Object.create(a, {y: {value: 20}}); 
+  
+  // Each of the following options will create a new empty object:
+  // var newObject = {};
+  // var newObject = Object.create( Object.prototype );
+  // var newObject = new Object();
+  // Each of the following options will assign keys and values to object:
+  // newObject.someKey = "Hello World";
+  // newObject["someKey"] = "Hello World";
+  // for more control of the property's behavior
+  // Object.defineProperty( newObject, "someKey", {
+  //   value: "Hello World",
+  //   writable: true,
+  //   enumerable: true,
+  //   configurable: true
+  // });
+  // Object.defineProperties( newObject, { 
+  //   "someKey": {
+  //     value: "Hello World",
+  //     writable: true
+  //   },
+  //   "anotherKey": {
+  //     value: "Foo bar",
+  //     writable: false
+  //   }
+  // });
 
   var c = {
     y: 30,
@@ -174,11 +199,14 @@ new function(){ /* code */ }() // Only need parens if passing arguments
   // so the inherited object inherit from a_constructor.prototype which is an object
   function a_constructor(y) {
     this.y = y; // own y property
+    this.toString = function () { // this function is redefined for each of the new objects and is not optimal
+      return ("y is: " + y);
+    }
   }
 
   a_constructor.prototype.x = 10;
 
-  a_constructor.prototype.calculate = function(z) {
+  a_constructor.prototype.calculate = function(z) { // this function will be shared between all objects
     return this.x + this.y + z;
   }
 
