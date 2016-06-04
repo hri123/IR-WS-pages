@@ -5,6 +5,7 @@
 
 */
 
+// Object Literal
 var counterObjectRegular = {
   
   i: 10,
@@ -32,7 +33,7 @@ console.log(counterObjectRegular.get());
 
 var counterObject = (function(inParam_i) {
     
-  var i = inParam_i; // i only exists in the static scope of the object that gets returned below, so is private, cannot be accessed directly
+  var i = inParam_i; // closure: i only exists in the static scope of the object that gets returned below, so is private, cannot be accessed directly
   
   return {
       
@@ -59,6 +60,49 @@ console.log(counterObject.i); // undefined
 
 // the above pattern can be used to create one object, what about multiple objects, make it a Java like class
 
+// Simplified class with private variables
+function class_constructor_2(iparams_i, inparams_j) {
+    
+    var i = iparams_i, j = inparams_j;
+    
+    this.getProduct = function() {
+        return i * j;
+    }
+    
+    this.seti = function(inparams_i) {
+        i = inparams_i;
+    }
+    
+    this.setj = function(inparams_j) {
+        j = inparams_j;
+    }
+}
+
+var cc2Obj1 = new class_constructor_2(2, 3);
+console.log(cc2Obj1.getProduct()); // 6
+var cc2Obj2 = new class_constructor_2(5, 6);
+console.log(cc2Obj2.getProduct()); // 30
+console.log(cc2Obj1.getProduct()); // 6
+
+
+
+var class_constructor = function (inParam_i, parentArray) {
+    
+    var i = inParam_i; // private var
+    var returnObject = createReturnObject(parentArray);
+        
+    returnObject.get = function() { // public methods
+        return i;
+    };
+    
+    returnObject.increment = function() {
+        i++;
+    };
+    
+    return returnObject;
+    
+};
+
 // mixin for the rest of the parents
 function extend(destination, source) { // jquery extend
   for (var k in source) {
@@ -82,23 +126,6 @@ function createReturnObject(parentArray) {
     
     return returnObject;
 }
-
-var class_constructor = function (inParam_i, parentArray) {
-    
-    var i = inParam_i; // private var
-    var returnObject = createReturnObject(parentArray);
-        
-    returnObject.get = function() { // public methods
-        return i;
-    };
-    
-    returnObject.increment = function() {
-        i++;
-    };
-    
-    return returnObject;
-    
-};
 
 var obj1 = new class_constructor(10);
 console.log(obj1.get()); // 10
@@ -138,6 +165,9 @@ console.log(obj5.parentObj2_var1); // 200
 console.log(obj5.hasOwnProperty('parentObj2_var1')); // true - because it was mixin-ed
 
 // to avoid unnecessary complexity created for using the private variables
+// lik - We also can't access private members in methods that are added to the object at a later point
+// Other disadvantages include the inability to create automated unit tests for private members and additional complexity when bugs require hot fixes.
+
 // dojo classes follow the convention of using _ underscore for private variables
 // instead of following the static scope / context way
 
@@ -187,5 +217,31 @@ obj1_dojo.increment();
 console.log(obj1_dojo.get()); // 11
 obj2_dojo.increment();
 console.log(obj2_dojo.get()); // 21
+
+
+
+// Revealing module pattern
+var myRevealingModule = (function() {
+    var privateVar = 10;
+    
+    function privateFunction() {
+        
+        console.log(privateVar);
+        
+    }
+    
+    function publicFunction() {
+        privateFunction();
+    }
+    
+    return {
+      pointerToPublicFunction: publicFunction  
+    };
+    
+}());
+myRevealingModule.pointerToPublicFunction(); // 10
+// Advantage of revealing module pattern is you have more control of what functions the user can access without having to touch the main logic code
+// A disadvantage of this pattern is that if a private function refers to a public function, that public function can't be overridden if a patch is necessary.
+// the regular pattern used in dojo seems the middle ground providing enough abstraction and at the same time not adding problems and complexity
 
 })();
