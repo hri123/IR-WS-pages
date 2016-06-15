@@ -64,6 +64,12 @@
               "<li><a href='https://www.youtube.com/watch?v=4txbMcGPs1E' target='_blank'>Coding School Presentation - Everything You Wanted to Know About Bash Scripting - Hack Reactor</a></li>",
               "</ul>"],
             "highlight": "js"
+        }, {
+            "filename": "source/Concepts/VirtualMachine.js",
+            "description": ["<ul>",
+              "<li>Vagrant, VirtualBox</li>",
+              "</ul>"],
+            "highlight": "js"
         }]
     }, {
         "panelName": "Database - DB2",

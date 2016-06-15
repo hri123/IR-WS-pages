@@ -1,3 +1,0 @@
-osascript -e 'tell application "Terminal" to activate'
-osascript -e 'tell app "Terminal" to do script "ssh -i /Users/hrishikesh/.ssh/idcuser_rsa idcuser@10.143.73.40"' 
-osascript -e 'tell app "Terminal" to set bounds of window 1 to {840, 0, 1680, 480}'
