@@ -1,0 +1,16 @@
+#!/bin/bash
+export DOCKEY="$@"
+
+function searchdoc(){
+
+ VK1=$(cat "$@" | grep -i "$DOCKEY" | wc -l)
+ VK2=$(unzip -c "$@" | grep -i "$DOCKEY" | wc -l)
+ NUM=$(($VK1+$VK2))
+ if [ "$NUM" -gt 0 ]; then
+  echo $NUM occurences in $@
+ fi
+}
+
+export -f searchdoc
+echo searching for $DOCKEY ...
+find . -iname "*.docx" -exec bash -c 'searchdoc "{}" 2>/dev/null' \;
