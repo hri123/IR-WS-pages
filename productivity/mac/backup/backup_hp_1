@@ -1,0 +1,1 @@
+rsync -avzr --delete --dry-run /Users/hrishikesh/H/HP/ /Volumes/HP\ V250W\ 1/Hrishikesh/
