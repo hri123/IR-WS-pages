@@ -50,6 +50,13 @@
             "highlight": "js"
         }]
     }, {
+        "panelName": "Kubernetes",
+        "sources": [{
+            "filename": "source/Concepts/kubernetes.js",
+            "description": ["Kubernetes - Concepts"],
+            "highlight": "js"
+        }]
+    }, {
         "panelName": "Networking",
         "sources": [{
             "filename": "source/Concepts/networking.js",
