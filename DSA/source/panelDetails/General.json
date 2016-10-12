@@ -5,6 +5,12 @@
             "filename": "source/General/learningPath.js",
             "description": ["Learning Path"],
             "highlight": "js"
+        }, {
+            "filename": "",
+            "description": ["<ul>",
+              "<li><a href='https://github.com/jwasham/google-interview-university' target='_blank'>Google Interview University</a></li>",
+              "</ul>"],
+            "highlight": "js"
         }]
     }, {
         "panelName": "TODOs",
