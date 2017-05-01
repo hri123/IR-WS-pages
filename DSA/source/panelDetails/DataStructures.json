@@ -15,5 +15,14 @@
             "description": "Recursion and backtracking",
             "highlight": "js"
         }]
+    }, {
+        "panelName": "DataStructures - Tutorials",
+        "sources": [{
+            "filename": "",
+            "description": ["<ul>",
+              "<li><a href='https://frontendmasters.com/courses/data-structures-algorithms/' target='_blank'>Javascript - FrontEndMasters</a></li>",
+              "</ul>"],
+            "highlight": "js"
+        }]
     }]
 }
