@@ -1,1 +1,4 @@
-rsync -avzr --delete --dry-run /Users/hrishikesh/H/Mirrored/FreqUpdtd/ /Volumes/Expansion\ Drive/Laptop/W540/H/Mirrored/FreqUpdtd/ > ~/Migration/copy_h_mirror_freq_hist.log
+rsync -avzr --delete --dry-run /Users/hrishikesh/H/Mirrored/FreqUpdtd/ /Volumes/Transcend/Laptop/W540/H/Mirrored/FreqUpdtd/ > ~/Migration/copy_h_mirror_freq_hist.log
+
+
+rsync -avzr --delete /Users/hrishikesh/H/Mirrored/FreqUpdtd/ /Volumes/H-Seagate/Laptop/H/Mirrored/FreqUpdtd/ > ~/Migration/copy_h_mirror_freq_hist.log
