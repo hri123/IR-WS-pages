@@ -1,0 +1,15 @@
+#!/bin/bash
+# Bash Menu Script Example
+
+DEFAULT=$1
+if [ -z ${DEFAULT} ]; then
+  PS3='Please enter your choice: '
+  options=("srinib" "preddy" "hrishikesh.kumar" "lsakaray" "ngot")
+  select opt in "${options[@]}"
+  do
+    osascript -e 'do shell script "'"open https://ibm.webex.com/meet/$opt"'"'
+    break
+  done
+else
+  osascript -e 'do shell script "'"open https://ibm.webex.com/meet/$1"'"'
+fi
