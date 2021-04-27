@@ -1,0 +1,20 @@
+#!/bin/bash
+osascript <<EOD
+tell application "Slack"
+	activate
+	tell application "System Events"
+		keystroke "k" using command down
+		delay 0.5
+		keystroke "Slackbot"
+		delay 0.5
+		key code 36
+		delay 0.5
+		keystroke "/active"
+		delay 0.5
+		key code 36
+		keystroke "[" using command down
+		delay 0.5
+		key code 36
+	end tell
+end tell
+EOD
