@@ -9,9 +9,12 @@ tell application "Slack"
 		delay 0.5
 		key code 36
 		delay 0.5
-		keystroke "/active"
+		keystroke "/"
+		delay 0.5
+		keystroke "active"
 		delay 0.5
 		key code 36
+		delay 0.5
 		keystroke "[" using command down
 		delay 0.5
 		key code 36
