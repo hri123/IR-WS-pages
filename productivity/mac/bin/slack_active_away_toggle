@@ -1,4 +1,5 @@
 #!/bin/bash
+# Source: https://github.com/samknight/slack_applescript
 osascript <<EOD
 tell application "Slack"
 	activate
